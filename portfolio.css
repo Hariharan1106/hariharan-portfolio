@@ -296,7 +296,7 @@ body:hover .cursor, body:hover .cursor-dot { opacity: 1; }
 .title-dot { color: var(--accent2); }
 
 .home-sub {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   line-height: 1.9;
   color: var(--text-muted);
   max-width: 480px;
@@ -379,7 +379,7 @@ body:hover .cursor, body:hover .cursor-dot { opacity: 1; }
 /* ===== ABOUT ===== */
 .about-section { background: var(--bg2); }
 .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; margin-top: 48px; }
-.about-text { font-size: 0.88rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 20px; }
+.about-text { font-size: 1.2rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 20px; }
 .about-info { margin: 32px 0; display: flex; flex-direction: column; gap: 12px; }
 .info-row { display: flex; gap: 16px; font-size: 0.8rem; }
 .info-key { color: var(--accent); min-width: 100px; }

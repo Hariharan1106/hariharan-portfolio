@@ -163,7 +163,7 @@ if (homeTag) {
   function typeChar() {
     if (i < text.length) {
       homeTag.textContent += text[i++];
-      setTimeout(typeChar, 60);
+      setTimeout(typeChar,60);
     }
   }
   // Start after a short delay

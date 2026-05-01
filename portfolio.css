@@ -13,7 +13,7 @@
   --accent2: #0055cc;
   --accent-glow: rgba(0, 85, 122, 0.15);
   --accent2-glow: rgba(0, 85, 204, 0.1);
-  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-display: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --font-mono: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --radius: 12px;
   --nav-h: 70px;
@@ -96,7 +96,7 @@ body:hover .cursor, body:hover .cursor-dot { opacity: 1; }
 
 .logo {
   font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
@@ -616,7 +616,6 @@ a.ci-val:hover { color: var(--accent); }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .home { grid-template-columns: 1fr; padding: calc(var(--nav-h) + 40px) 40px 60px; }
-  .home-deco { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-right { order: -1; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }

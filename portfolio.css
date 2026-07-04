@@ -235,7 +235,7 @@ body:hover .cursor, body:hover .cursor-dot { opacity: 1; }
 .btn:hover::before { opacity: 0.05; }
 .btn-primary {
   background: var(--accent);
-  color: #000;
+  color: #fff;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
 .btn-ghost {

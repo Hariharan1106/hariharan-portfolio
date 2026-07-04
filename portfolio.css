@@ -132,37 +132,45 @@ body:hover .cursor, body:hover .cursor-dot { opacity: 1; }
 
 /* THEME TOGGLE */
 .theme-toggle {
-  background: none; border: 1px solid var(--border); border-radius: 30px;
-  padding: 5px 6px; cursor: none;
-  display: flex; align-items: center;
-  transition: border-color var(--transition);
-}
-.theme-toggle:hover { border-color: var(--accent); }
-.toggle-track {
+  background: none; border: 1px solid var(--border); border-radius: 50%;
+  width: 40px; height: 40px;
+  cursor: none;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color var(--transition), background var(--transition), transform 0.3s;
   position: relative;
-  display: flex; align-items: center; gap: 4px;
-  width: 52px; height: 22px;
+  overflow: hidden;
 }
-.toggle-thumb {
+.theme-toggle:hover { 
+  border-color: var(--accent); 
+  transform: scale(1.05);
+}
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+.theme-toggle svg {
   position: absolute;
-  width: 22px; height: 22px;
-  background: var(--accent);
-  border-radius: 50%;
-  left: 0;
-  transition: transform var(--transition);
-  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
 }
-[data-theme="light"] .toggle-thumb { transform: translateX(30px); }
-.toggle-icon {
-  font-size: 0.75rem;
-  position: relative; z-index: 2;
-  transition: opacity var(--transition);
-  line-height: 1;
+/* Sun icon - visible in dark mode */
+.icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  color: var(--accent);
 }
-.toggle-icon.sun { margin-left: auto; opacity: 0.4; }
-.toggle-icon.moon { margin-right: 2px; opacity: 1; }
-[data-theme="light"] .toggle-icon.sun { opacity: 1; }
-[data-theme="light"] .toggle-icon.moon { opacity: 0.4; }
+[data-theme="light"] .icon-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+/* Moon icon - visible in light mode */
+.icon-moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+  color: var(--accent);
+}
+[data-theme="light"] .icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
 
 /* HAMBURGER */
 .hamburger {

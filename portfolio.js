@@ -185,3 +185,4 @@ if (gridOverlay) {
     gridOverlay.style.transform = `translateY(${y * 0.3}px)`;
   }, { passive: true });
 }
+

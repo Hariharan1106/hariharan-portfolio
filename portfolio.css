@@ -650,19 +650,21 @@ a.ci-val:hover { color: var(--accent); }
 }
 
 /* ===== SKILLS SECTION ===== */
+
   .skills-group {
     margin-top: 40px;
   }
 
   .skills-group-title {
     display: inline-block;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    letter-spacing: 0.03em;
-    color: #1f2430;
-    margin: 0 0 14px 0;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
     position: relative;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 
   .skills-group-title::after {
@@ -671,26 +673,27 @@ a.ci-val:hover { color: var(--accent); }
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 6px;
-    background: #fbe4ea;
+    height: 8px;
+    background: var(--accent-glow);
     border-radius: 4px;
     z-index: -1;
   }
 
   .skills-box {
     background:
-      linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px) 0 0 / 28px 28px,
-      linear-gradient(0deg, rgba(0,0,0,0.035) 1px, transparent 1px) 0 0 / 28px 28px,
-      #fbfbfe;
-    border: 1px solid #ececf3;
-    border-radius: 18px;
-    padding: 40px 32px;
+      linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 30px 30px,
+      linear-gradient(0deg, var(--border) 1px, transparent 1px) 0 0 / 30px 30px,
+      var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 44px 40px;
+    transition: background var(--transition), border-color var(--transition);
   }
 
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 36px 24px;
+    gap: 44px 32px;
     justify-items: center;
   }
 
@@ -698,7 +701,7 @@ a.ci-val:hover { color: var(--accent); }
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     text-align: center;
   }
 
@@ -711,25 +714,36 @@ a.ci-val:hover { color: var(--accent); }
   }
 
   .skill-icon img {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     object-fit: contain;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.08));
     transition: transform 0.2s ease;
   }
 
   .skill-card:hover .skill-icon img {
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-4px) scale(1.08);
   }
 
   .skill-name {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #3a3f4b;
+    color: var(--text-muted);
+    transition: color var(--transition);
   }
 
   @media (max-width: 480px) {
     .skills-box { padding: 28px 18px; }
     .skills-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 28px 16px; }
-    .skill-icon img { width: 44px; height: 44px; }
+    .skill-icon, .skill-icon img { width: 48px; height: 48px; }
   }
+
+  
+  /* Invert black icons (like GitHub) so they're visible in dark mode */
+.skill-icon img[alt="GitHub"] {
+  transition: filter var(--transition), transform 0.2s ease;
+}
+
+[data-theme="dark"] .skill-icon img[alt="GitHub"],
+:root:not([data-theme="light"]) .skill-icon img[alt="GitHub"] {
+  filter: invert(1);
+}
